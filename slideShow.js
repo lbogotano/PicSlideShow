@@ -11,23 +11,36 @@
 // 5. A function `getCurrentPhoto()` that returns the current photo from the list.
 
 
-let slideshow = {
-    photoList: ['pic1', 'pic2', 'Pic3', 'Pic4'],
-    currentPhotoIndex: 0,
-    nextPhoto: function() { 
-        if (this.currentPhotoIndex < this.photoList.length - 1) {
-            this.currentPhotoIndex ++;
-            console.log (this.currentPhotoIndex);
-            // console.log (this.photoList[this.currentPhotoIndex]);
-        }else if (this.currentPhotoIndex<this.photoList.length){
-            console.log('end of slideshow');
+​
+var slideshow = {
+​
+    photoList:['pic0','pic1','pic2','pic3','pic4'],
+​
+    currentPhotoIndex : 0,
+​
+    nextPhoto : function(){
+        if(this.currentPhotoIndex < this.photoList.length-1){       
+            this.currentPhotoIndex++;
+​
+        }else if(this.currentPhotoIndex >= this.photoList.length-1){
+            return 'end of slides';
         }
-        //still working on it, i ll finish it later
+​
+        return this.photoList[this.currentPhotoIndex];
     },
+​
     prevPhoto: function(){
-        if(this.currentPhotoIndex>0{
+        if(this.currentPhotoIndex > 0){
             this.currentPhotoIndex--;
-            console.log(this.photoList[this.currentPhotoIndex])
-        } S
-    }    
-      
+​
+        }else if(this.currentPhotoIndex === 0){
+            return 'beginning of slides';
+        }
+​
+        return this.photoList[this.currentPhotoIndex];
+    },
+ 
+    getCurrentPhoto: function(){
+        return this.photoList[this.currentPhotoIndex];
+    }
+};
