@@ -43,4 +43,6 @@ var slideshow = {
     getCurrentPhoto: function(){
         return this.photoList[this.currentPhotoIndex];
     }
-};
+}   playInterval: function () {
+         
+ 
